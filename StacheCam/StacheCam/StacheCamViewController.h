@@ -56,4 +56,14 @@ void displayErrorOnMainQueue(NSError *error, NSString *message);
 - (IBAction)updateUsingAnimations:(UISwitch *)sender;
 - (IBAction)toggleFacePicker:(UISwitch*)sender;
 
+// UI declaration for FPS Duration slider, FPS Duration label, Capture button
+
+@property (weak, nonatomic) IBOutlet UILabel *fpsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
+
+@property (weak, nonatomic) IBOutlet UISlider *fpsSlider;
+@property (weak, nonatomic) IBOutlet UISlider *durationSlider;
+
+@property (weak, nonatomic) IBOutlet UIButton *captureButton;
+
 @end

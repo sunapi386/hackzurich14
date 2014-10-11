@@ -17,7 +17,7 @@
 
 // State needed for CoreImage based face processing, stats, and display
 @interface StacheCamViewController()
-@property (strong,nonatomic) AVCaptureVideoDataOutput *videoDataOutput;
+//@property (strong,nonatomic) AVCaptureVideoDataOutput *videoDataOutput;
 @property (strong,nonatomic) CIDetector *faceDetector;
 @property (strong,nonatomic) NSDate* ciLastFrameTime;
 @property (assign,nonatomic) float ciProcessingInterval;
