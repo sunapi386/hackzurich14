@@ -59,7 +59,7 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
 	[rootLayer setMasksToBounds:YES];
 	self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
 	[self.previewLayer setBackgroundColor:[[UIColor blackColor] CGColor]];
-	[self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspect];
+	[self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
 	[self.previewLayer setFrame:[rootLayer bounds]];
 	[rootLayer addSublayer:self.previewLayer];
 	
@@ -219,6 +219,17 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
 }
 
 #pragma mark - View lifecycle
+
+- (IBAction)sliderChange:(id)sender {
+    int sliderValue = lroundf(self.fpsSlider.value);
+    [self.fpsSlider setValue:sliderValue animated:YES];
+    self.fpsLabel.text = [NSString stringWithFormat:@"%d FPS", sliderValue];
+}
+
+- (IBAction)captureButton:(id)sender {
+    NSLog(@"Capture button pressed");
+//    [button addTarget:self action:@selector(buttonDown:) forControlEvents:UIControlEventTouchDown];
+}
 
 - (void)dealloc
 {
