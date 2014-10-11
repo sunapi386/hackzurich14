@@ -18,10 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self.makinggif setTitle:@"gogogo" forState:UIControlStateNormal];
+    [self.button setTitle:@"gogogo" forState:UIControlStateNormal];
 }
-- (IBAction)makinggif:(id)sender {
-    
+
+- (IBAction)button:(id)sender {
 }
 
 - (void)didReceiveMemoryWarning {
