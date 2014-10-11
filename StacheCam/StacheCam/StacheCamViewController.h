@@ -27,7 +27,7 @@ extern const CGFloat FACE_RECT_BORDER_WIDTH;
 CGFloat DegreesToRadians(CGFloat degrees);
 void displayErrorOnMainQueue(NSError *error, NSString *message);
 
-@interface StacheCamViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface StacheCamViewController : UIViewController <UIGestureRecognizerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
 
 @property (strong, nonatomic, readonly) AVCaptureSession* session;
 @property (strong, nonatomic, readonly) AVCaptureVideoPreviewLayer* previewLayer;

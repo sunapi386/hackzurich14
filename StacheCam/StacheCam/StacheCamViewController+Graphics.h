@@ -23,6 +23,7 @@ extern const CGFloat SCALE_FUNNY_FACE;
 
 @interface StacheCamViewController()
 @property (strong,nonatomic) AVCaptureStillImageOutput *stillImageOutput;
+@property (strong,nonatomic) AVCaptureVideoDataOutput *videoDataOutput;
 @end
 
 // Methods for generic graphics operations such as loading the face overlay graphics

@@ -66,6 +66,18 @@ static AVCaptureVideoOrientation avOrientationForDeviceOrientation(UIDeviceOrien
 	} else {
 		self.stillImageOutput = nil;
 	}
+
+    self.videoDataOutput = [AVCaptureVideoDataOutput new];
+    if ( [self.session canAddOutput:self.videoDataOutput] ) {
+        [self.session addOutput:self.videoDataOutput];
+        dispatch_queue_t videoDataOutputQueue = dispatch_queue_create("VideoDataOutputQueue", DISPATCH_QUEUE_SERIAL);
+        [self.videoDataOutput setSampleBufferDelegate:self queue:videoDataOutputQueue];
+        NSDictionary *rgbOutputSettings = @{ (__bridge NSString*)kCVPixelBufferPixelFormatTypeKey : [NSNumber numberWithInt:kCMPixelFormat_32BGRA] };
+        [self.videoDataOutput setVideoSettings:rgbOutputSettings];
+    } else {
+        self.videoDataOutput = nil;
+    }
+
 	
 }
 
@@ -73,6 +85,26 @@ static AVCaptureVideoOrientation avOrientationForDeviceOrientation(UIDeviceOrien
 {
 	self.stillImageOutput = nil;
 	self.funnyFaces = nil;
+}
+
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection;
+{
+    NSLog(@"Received sample buffer");
+
+    CVPixelBufferRef srcCVImageBuffer = CMSampleBufferGetImageBuffer( sampleBuffer );
+
+    CGImageRef srcImage = NULL;
+
+    OSStatus err = CreateCGImageFromCVPixelBuffer(srcCVImageBuffer, &srcImage);
+    if ( err != noErr ) {
+        NSLog(@"error");
+    }
+    NSLog(@"srcImage = %p", srcImage);
+
+    writeCGImageToCameraRoll( srcImage, nil );
+
+    CFRelease(srcImage);
+
 }
 
 - (IBAction)takePicture:(id)sender
