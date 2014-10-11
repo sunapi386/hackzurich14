@@ -33,6 +33,7 @@ void displayErrorOnMainQueue(NSError *error, NSString *message);
 @property (strong, nonatomic, readonly) AVCaptureVideoPreviewLayer* previewLayer;
 @property (assign, nonatomic, readonly) CGFloat effectiveScale; // pinch-to-zoom maintained by controller
 
+@property (strong,nonatomic) AVCaptureVideoDataOutput *videoDataOutput;
 @property (atomic) BOOL isButtonDown;
 @property (atomic) int fpsSliderValue;
 
