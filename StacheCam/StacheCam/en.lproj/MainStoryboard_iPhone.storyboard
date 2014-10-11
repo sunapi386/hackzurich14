@@ -56,7 +56,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="captureButton:" destination="2" eventType="touchUpInside" id="yuE-X2-OMd"/>
+                                            <action selector="buttonTouchDown:" destination="2" eventType="touchDown" id="HYl-fD-Ada"/>
+                                            <action selector="buttonTouchUp:" destination="2" eventType="touchUpInside" id="GeQ-cg-2JH"/>
                                         </connections>
                                     </button>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="8">

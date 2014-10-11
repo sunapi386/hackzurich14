@@ -226,10 +226,16 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
     self.fpsLabel.text = [NSString stringWithFormat:@"%d FPS", sliderValue];
 }
 
-- (IBAction)captureButton:(id)sender {
-    NSLog(@"Capture button pressed");
-//    [button addTarget:self action:@selector(buttonDown:) forControlEvents:UIControlEventTouchDown];
+-(IBAction)buttonTouchDown:(id)sender
+{
+     NSLog(@"Button touch down");
 }
+
+-(IBAction)buttonTouchUp:(id)sender
+{
+    NSLog(@"Button touch up");
+}
+
 
 - (void)dealloc
 {
