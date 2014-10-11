@@ -90,30 +90,31 @@ static AVCaptureVideoOrientation avOrientationForDeviceOrientation(UIDeviceOrien
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection;
 {
 
-    // Only do this periodically
-    static int framesToWait = 15; // Arbituary, define as needed
-    framesToWait--;
+    if (self.isButtonDown) { // Only do this if button is down
 
-    if (framesToWait == 0) { // We should grab a frame.
-        // NSLog(@"Received sample buffer");
-        CVPixelBufferRef srcCVImageBuffer = CMSampleBufferGetImageBuffer( sampleBuffer );
-        CGImageRef srcImage = NULL;
+        static int framesToWait = 20; // TODO: Read actual value from user, ONCE
+        framesToWait--;
 
-        // Get image from reference from buffer
-        OSStatus err = CreateCGImageFromCVPixelBuffer(srcCVImageBuffer, &srcImage);
-        if ( err != noErr ) {
-            NSLog(@"error");
+        if (framesToWait == 0) { // We should grab a frame.
+            NSLog(@"Received sample buffer");
+            CVPixelBufferRef srcCVImageBuffer = CMSampleBufferGetImageBuffer( sampleBuffer );
+            CGImageRef srcImage = NULL;
+
+            // Get image from reference from buffer
+            OSStatus err = CreateCGImageFromCVPixelBuffer(srcCVImageBuffer, &srcImage);
+            if ( err != noErr ) {
+                NSLog(@"error");
+            }
+            // NSLog(@"srcImage = %p", srcImage);
+
+            // Write image out to camera roll
+            writeCGImageToCameraRoll( srcImage, nil );
+            // release buffer
+            CFRelease(srcImage);
+            framesToWait = 20; // Reset it again
         }
-        // NSLog(@"srcImage = %p", srcImage);
 
-        // Write image out to camera roll
-        writeCGImageToCameraRoll( srcImage, nil );
-        // release buffer
-        CFRelease(srcImage);
-        framesToWait = 15; // Reset it again
     }
-
-
 }
 
 - (IBAction)takePicture:(id)sender

@@ -221,19 +221,22 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
 #pragma mark - View lifecycle
 
 - (IBAction)sliderChange:(id)sender {
-    int sliderValue = lroundf(self.fpsSlider.value);
+    int sliderValue = (int)lroundf(self.fpsSlider.value);
     [self.fpsSlider setValue:sliderValue animated:YES];
-    self.fpsLabel.text = [NSString stringWithFormat:@"%d FPS", sliderValue];
+    self.fpsLabel.text = [NSString stringWithFormat:@"Every %d Frames", sliderValue];
 }
 
 -(IBAction)buttonTouchDown:(id)sender
 {
      NSLog(@"Button touch down");
+    self.isButtonDown = true;
+    self.fpsSliderValue = (int)lroundf(self.fpsSlider.value);
 }
 
 -(IBAction)buttonTouchUp:(id)sender
 {
     NSLog(@"Button touch up");
+    self.isButtonDown = false;
 }
 
 
