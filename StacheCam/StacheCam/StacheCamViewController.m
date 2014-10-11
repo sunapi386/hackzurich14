@@ -266,6 +266,7 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
 	self.avfRectSwitch.on = UserDefaults.displayAVFRects;
 	self.ciRectSwitch.on = UserDefaults.displayCIRects;
 	self.animationSwitch.on = UserDefaults.usingAnimation;
+    self.bunchOfURL = [NSMutableArray array];
 
 	[self setupAVCapture];
 }
