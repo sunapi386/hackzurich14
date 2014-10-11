@@ -91,12 +91,10 @@ static AVCaptureVideoOrientation avOrientationForDeviceOrientation(UIDeviceOrien
 {
 
     if (self.isButtonDown) { // Only do this if button is down
+        self.framesPassed++;
 
-        static int framesToWait = 20; // TODO: Read actual value from user, ONCE
-        framesToWait--;
-
-        if (framesToWait == 0) { // We should grab a frame.
-            NSLog(@"Received sample buffer");
+        if (self.framesPassed % self.fpsSliderValue == 0) { // We should grab a frame.
+            NSLog(@"Received sample buffer %d", self.framesPassed);
             CVPixelBufferRef srcCVImageBuffer = CMSampleBufferGetImageBuffer( sampleBuffer );
             CGImageRef srcImage = NULL;
 
@@ -111,7 +109,6 @@ static AVCaptureVideoOrientation avOrientationForDeviceOrientation(UIDeviceOrien
             writeCGImageToCameraRoll( srcImage, nil );
             // release buffer
             CFRelease(srcImage);
-            framesToWait = 20; // Reset it again
         }
 
     }
