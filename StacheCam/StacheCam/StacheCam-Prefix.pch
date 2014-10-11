@@ -1,0 +1,28 @@
+/*
+ <codex>
+ <abstract>Prefix header for all StacheCam source files</abstract>
+ <version>1.0</version>
+ </codex>
+ */
+
+#ifndef __CODEX__
+/*
+ $Log$
+ 6jun2011 bford
+ ___CODEX__ -> __CODEX__.  Be careful whom you copy/paste from.
+ 
+ 6jun2011 bford
+ first time.
+ */ 
+#endif
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+	#import <UIKit/UIKit.h>
+	#import <Foundation/Foundation.h>
+#endif
