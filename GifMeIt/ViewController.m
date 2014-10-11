@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "makeAnimatedGif.h"
+#import "UIImage+animatedGIF.h"
 
 @interface ViewController ()
 
@@ -17,6 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return interfaceOrientation == UIInterfaceOrientationPortrait;
+}
+
+- (IBAction)makeGif:(id)sender {
+    NSURL *url1 = makeAnimatedGif();
+    self.urlImageView.image = [UIImage animatedImageWithAnimatedGIFURL:url1];
 }
 
 - (void)didReceiveMemoryWarning {

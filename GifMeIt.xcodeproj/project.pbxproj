@@ -14,6 +14,14 @@
 		4CD4EECB19E977D900DBD071 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CD4EECA19E977D900DBD071 /* Images.xcassets */; };
 		4CD4EECE19E977D900DBD071 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD4EECC19E977D900DBD071 /* LaunchScreen.xib */; };
 		4CD4EEDA19E977D900DBD071 /* GifMeItTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4EED919E977D900DBD071 /* GifMeItTests.m */; };
+		4CD4EEE619E978FD00DBD071 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4EEE519E978FD00DBD071 /* UIImage+animatedGIF.m */; };
+		4CD4EEE719E978FD00DBD071 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4EEE519E978FD00DBD071 /* UIImage+animatedGIF.m */; };
+		4CD4EEEA19E979E600DBD071 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD4EEE919E979E600DBD071 /* AVFoundation.framework */; };
+		4CD4EEEC19E979EC00DBD071 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD4EEEB19E979EC00DBD071 /* MobileCoreServices.framework */; };
+		4CD4EEEE19E979F100DBD071 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD4EEED19E979F100DBD071 /* CoreImage.framework */; };
+		4CD4EEF019E979F600DBD071 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD4EEEF19E979F600DBD071 /* ImageIO.framework */; };
+		4CD4EEF219E97A0200DBD071 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD4EEF119E97A0200DBD071 /* UIKit.framework */; };
+		4CD4EEF419E97A0900DBD071 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD4EEF319E97A0900DBD071 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +48,15 @@
 		4CD4EED319E977D900DBD071 /* GifMeItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GifMeItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD4EED819E977D900DBD071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CD4EED919E977D900DBD071 /* GifMeItTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GifMeItTests.m; sourceTree = "<group>"; };
+		4CD4EEE419E978E900DBD071 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		4CD4EEE519E978FD00DBD071 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		4CD4EEE819E9793900DBD071 /* makeAnimatedGif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = makeAnimatedGif.h; sourceTree = "<group>"; };
+		4CD4EEE919E979E600DBD071 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4CD4EEEB19E979EC00DBD071 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		4CD4EEED19E979F100DBD071 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		4CD4EEEF19E979F600DBD071 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		4CD4EEF119E97A0200DBD071 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4CD4EEF319E97A0900DBD071 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +64,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD4EEF419E97A0900DBD071 /* Foundation.framework in Frameworks */,
+				4CD4EEF219E97A0200DBD071 /* UIKit.framework in Frameworks */,
+				4CD4EEF019E979F600DBD071 /* ImageIO.framework in Frameworks */,
+				4CD4EEEE19E979F100DBD071 /* CoreImage.framework in Frameworks */,
+				4CD4EEEC19E979EC00DBD071 /* MobileCoreServices.framework in Frameworks */,
+				4CD4EEEA19E979E600DBD071 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +86,12 @@
 		4CD4EEB119E977D900DBD071 = {
 			isa = PBXGroup;
 			children = (
+				4CD4EEF319E97A0900DBD071 /* Foundation.framework */,
+				4CD4EEF119E97A0200DBD071 /* UIKit.framework */,
+				4CD4EEEF19E979F600DBD071 /* ImageIO.framework */,
+				4CD4EEED19E979F100DBD071 /* CoreImage.framework */,
+				4CD4EEEB19E979EC00DBD071 /* MobileCoreServices.framework */,
+				4CD4EEE919E979E600DBD071 /* AVFoundation.framework */,
 				4CD4EEBC19E977D900DBD071 /* GifMeIt */,
 				4CD4EED619E977D900DBD071 /* GifMeItTests */,
 				4CD4EEBB19E977D900DBD071 /* Products */,
@@ -81,6 +110,7 @@
 		4CD4EEBC19E977D900DBD071 /* GifMeIt */ = {
 			isa = PBXGroup;
 			children = (
+				4CD4EEE319E977E200DBD071 /* AnimatedGif */,
 				4CD4EEC119E977D900DBD071 /* AppDelegate.h */,
 				4CD4EEC219E977D900DBD071 /* AppDelegate.m */,
 				4CD4EEC419E977D900DBD071 /* ViewController.h */,
@@ -117,6 +147,16 @@
 				4CD4EED819E977D900DBD071 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CD4EEE319E977E200DBD071 /* AnimatedGif */ = {
+			isa = PBXGroup;
+			children = (
+				4CD4EEE419E978E900DBD071 /* UIImage+animatedGIF.h */,
+				4CD4EEE519E978FD00DBD071 /* UIImage+animatedGIF.m */,
+				4CD4EEE819E9793900DBD071 /* makeAnimatedGif.h */,
+			);
+			name = AnimatedGif;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CD4EEC619E977D900DBD071 /* ViewController.m in Sources */,
+				4CD4EEE619E978FD00DBD071 /* UIImage+animatedGIF.m in Sources */,
 				4CD4EEC319E977D900DBD071 /* AppDelegate.m in Sources */,
 				4CD4EEC019E977D900DBD071 /* main.m in Sources */,
 			);
@@ -230,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CD4EEDA19E977D900DBD071 /* GifMeItTests.m in Sources */,
+				4CD4EEE719E978FD00DBD071 /* UIImage+animatedGIF.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
