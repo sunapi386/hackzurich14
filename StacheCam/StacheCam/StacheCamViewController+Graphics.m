@@ -89,21 +89,30 @@ static AVCaptureVideoOrientation avOrientationForDeviceOrientation(UIDeviceOrien
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection;
 {
-    NSLog(@"Received sample buffer");
 
-    CVPixelBufferRef srcCVImageBuffer = CMSampleBufferGetImageBuffer( sampleBuffer );
+    // Only do this periodically
+    static int framesToWait = 15; // Arbituary, define as needed
+    framesToWait--;
 
-    CGImageRef srcImage = NULL;
+    if (framesToWait == 0) { // We should grab a frame.
+        // NSLog(@"Received sample buffer");
+        CVPixelBufferRef srcCVImageBuffer = CMSampleBufferGetImageBuffer( sampleBuffer );
+        CGImageRef srcImage = NULL;
 
-    OSStatus err = CreateCGImageFromCVPixelBuffer(srcCVImageBuffer, &srcImage);
-    if ( err != noErr ) {
-        NSLog(@"error");
+        // Get image from reference from buffer
+        OSStatus err = CreateCGImageFromCVPixelBuffer(srcCVImageBuffer, &srcImage);
+        if ( err != noErr ) {
+            NSLog(@"error");
+        }
+        // NSLog(@"srcImage = %p", srcImage);
+
+        // Write image out to camera roll
+        writeCGImageToCameraRoll( srcImage, nil );
+        // release buffer
+        CFRelease(srcImage);
+        framesToWait = 15; // Reset it again
     }
-    NSLog(@"srcImage = %p", srcImage);
 
-    writeCGImageToCameraRoll( srcImage, nil );
-
-    CFRelease(srcImage);
 
 }
 
