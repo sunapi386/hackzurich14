@@ -108,8 +108,6 @@
 		4C34B86919EA0B5C003A88D7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4C34B86A19EA0B77003A88D7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		69377D7615881E18008BBD00 /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
-		9642177319E9C4C300109E48 /* StacheCamViewController+Gif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StacheCamViewController+Gif.h"; sourceTree = "<group>"; };
-		9642177419E9C55A00109E48 /* StacheCamViewController+Gif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "StacheCamViewController+Gif.m"; sourceTree = "<group>"; };
 		9659E70119E9FA1B006868A9 /* exportAnimatedGif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = exportAnimatedGif.h; path = animateGIF/exportAnimatedGif.h; sourceTree = "<group>"; };
 		9659E70219E9FA1B006868A9 /* makeAnimatedGif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = makeAnimatedGif.h; path = animateGIF/makeAnimatedGif.h; sourceTree = "<group>"; };
 		9659E70319E9FA1B006868A9 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+animatedGIF.h"; path = "animateGIF/UIImage+animatedGIF.h"; sourceTree = "<group>"; };
@@ -189,8 +187,6 @@
 				2BA93DB015704BCC0087B313 /* StacheCamViewController+AVFFaceDetection.m */,
 				2B24C8761576ADE20092A568 /* StacheCamViewController+Graphics.h */,
 				2B24C8771576ADE20092A568 /* StacheCamViewController+Graphics.m */,
-				9642177319E9C4C300109E48 /* StacheCamViewController+Gif.h */,
-				9642177419E9C55A00109E48 /* StacheCamViewController+Gif.m */,
 				2B856C641570048000D449E3 /* UserDefaults.h */,
 				2B856C651570048000D449E3 /* UserDefaults.m */,
 				1B867FEE139D4AD300AD6B47 /* MainStoryboard_iPhone.storyboard */,
