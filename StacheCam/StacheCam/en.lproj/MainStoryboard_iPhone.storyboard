@@ -41,7 +41,7 @@
                                             <segue destination="Mto-sH-zbL" kind="modal" identifier="ModalSegue" animates="NO" id="GmR-ew-FWA"/>
                                         </connections>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="10" maxValue="40" id="zET-KJ-R1c" userLabel="Duration Horizontal Slider">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="10" maxValue="40" id="zET-KJ-R1c" userLabel="Duration Horizontal Slider">
                                         <rect key="frame" x="6" y="0.0" width="309" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
@@ -52,7 +52,7 @@
                                         <rect key="frame" x="8" y="29" width="295" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="1/15 Frames">
+                                            <fragment content="Use ~1/25 Frames For Best Result">
                                                 <attributes>
                                                     <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue"/>
@@ -66,17 +66,13 @@
                                         <rect key="frame" x="0.0" y="14" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <items>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="11"/>
                                             <barButtonItem image="SwapIcon.png" id="PxY-xR-UKT">
                                                 <connections>
                                                     <action selector="switchCameras:" destination="2" id="8qZ-JY-2qI"/>
                                                 </connections>
                                             </barButtonItem>
-                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="11"/>
-                                            <barButtonItem image="SnapIcon.png" id="9">
-                                                <connections>
-                                                    <action selector="takePicture:" destination="2" id="14"/>
-                                                </connections>
-                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="sz9-RL-9PR"/>
                                         </items>
                                     </toolbar>
                                 </subviews>
@@ -135,7 +131,7 @@
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="cXM-fE-5ip">
-                                <rect key="frame" x="-6" y="0.0" width="326" height="416"/>
+                                <rect key="frame" x="-3" y="-1" width="326" height="289"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
@@ -152,7 +148,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SnapIcon.png" width="32" height="20"/>
         <image name="SwapIcon.png" width="32" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

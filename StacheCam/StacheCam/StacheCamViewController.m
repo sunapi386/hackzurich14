@@ -233,9 +233,10 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
 
 -(IBAction)buttonTouchDown:(id)sender
 {
-     NSLog(@"Button touch down");
+    NSLog(@"Button touch down");
     self.isButtonDown = true;
     self.fpsSliderValue = (int)lroundf(self.fpsSlider.value);
+    [self.bunchOfURL removeAllObjects];
 }
 
 -(IBAction)buttonTouchUp:(id)sender
@@ -243,7 +244,6 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
     NSLog(@"Button touch up");
     self.isButtonDown = false;
     NSURL* exportUrl = exportAnimatedGif(self.bunchOfURL);
-    [self.bunchOfURL removeAllObjects];
     self.transURL = exportUrl;
     UIImage *image = [UIImage imageWithContentsOfFile:self.transURL.path];
     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
