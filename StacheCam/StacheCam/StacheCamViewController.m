@@ -148,6 +148,7 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
 		[self updateAVFoundationDetection:nil];
 		[self updateCoreImageDetection:nil];
 	}
+
 	[self.session commitConfiguration];
 }
 

@@ -52,7 +52,7 @@
                                         <rect key="frame" x="8" y="29" width="295" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Use ~1/25 Frames For Best Result">
+                                            <fragment content="Use 1/25 For Funny">
                                                 <attributes>
                                                     <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue"/>
@@ -121,13 +121,23 @@
                                 <rect key="frame" x="0.0" y="416" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HJX-Nw-2d7"/>
                                     <barButtonItem title="Back" id="4To-hk-OSF">
                                         <connections>
                                             <action selector="back:" destination="Mto-sH-zbL" id="Tpf-3y-oKc"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="9s9-p6-jFf"/>
+                                    <barButtonItem title="Facebook" id="6ag-GI-sLj" userLabel="Facebook">
+                                        <connections>
+                                            <action selector="postFB:" destination="Mto-sH-zbL" id="HYa-nY-5OV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="MH0-6B-GHc"/>
+                                    <barButtonItem title="Twitter" id="i3C-La-WLs" userLabel="Twitter">
+                                        <connections>
+                                            <action selector="postTwitter:" destination="Mto-sH-zbL" id="0aU-9W-NxO"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="cXM-fE-5ip">
