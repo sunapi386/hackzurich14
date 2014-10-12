@@ -33,8 +33,12 @@ void displayErrorOnMainQueue(NSError *error, NSString *message);
 @property (strong, nonatomic, readonly) AVCaptureVideoPreviewLayer* previewLayer;
 @property (assign, nonatomic, readonly) CGFloat effectiveScale; // pinch-to-zoom maintained by controller
 
+@property (strong,nonatomic) AVCaptureVideoDataOutput *videoDataOutput;
 @property (atomic) BOOL isButtonDown;
 @property (atomic) int fpsSliderValue;
+@property (strong, nonatomic) NSMutableArray* bunchOfURL;
+
+@property (strong, nonatomic) IBOutlet UIImageView *ImageView;
 
 @property (strong, nonatomic) NSArray* funnyFaces; // assigned by Graphics for use in AVFFaceDetection (array of dictionary of per-yaw UIImage)
 @property (strong, nonatomic) NSArray* lastMetadata; // assigned by AVFFaceDetection for use in Graphics still image capture (array of AVMetadataFaceObject)

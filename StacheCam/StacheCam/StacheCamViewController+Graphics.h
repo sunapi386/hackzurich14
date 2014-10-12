@@ -23,7 +23,8 @@ extern const CGFloat SCALE_FUNNY_FACE;
 
 @interface StacheCamViewController()
 @property (strong,nonatomic) AVCaptureStillImageOutput *stillImageOutput;
-@property (strong,nonatomic) AVCaptureVideoDataOutput *videoDataOutput;
+//@property (strong,nonatomic) AVCaptureVideoDataOutput *videoDataOutput;
+
 @property (atomic) int framesPassed;
 @end
 

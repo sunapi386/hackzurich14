@@ -30,6 +30,8 @@
 #import "StacheCamViewController+AVFFaceDetection.h"
 #import "StacheCamViewController+Graphics.h"
 #import "UserDefaults.h"
+#import "animateGIF/exportAnimatedGif.h"
+#import "animateGIF/UIImage+animatedGIF.h"
 
 static char * const AVCaptureStillImageIsCapturingStillImageContext = "AVCaptureStillImageIsCapturingStillImageContext";
 const CGFloat FACE_RECT_BORDER_WIDTH = 3;
@@ -237,6 +239,8 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
 {
     NSLog(@"Button touch up");
     self.isButtonDown = false;
+    NSURL* exportUrl = exportAnimatedGif(self.bunchOfURL);
+    self.ImageView.image = [UIImage animatedImageWithAnimatedGIFURL:exportUrl];
 }
 
 
@@ -266,6 +270,7 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
 	self.avfRectSwitch.on = UserDefaults.displayAVFRects;
 	self.ciRectSwitch.on = UserDefaults.displayCIRects;
 	self.animationSwitch.on = UserDefaults.usingAnimation;
+    self.bunchOfURL = [NSMutableArray array];
 
 	[self setupAVCapture];
 }

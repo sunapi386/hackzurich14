@@ -25,7 +25,7 @@ static CGContextRef CreateCGBitmapContextForSize(CGSize size);
 static OSStatus CreateCGImageFromCVPixelBuffer(CVPixelBufferRef pixelBuffer, CGImageRef *imageOut);
 static void ReleaseCVPixelBuffer(void *pixel, const void *data, size_t size);
 static UIImage* newHorizFlippedImage(UIImage* image);
-static BOOL writeCGImageToCameraRoll(CGImageRef cgImage, NSDictionary *metadata);
+static NSString* writeCGImageToCameraRoll(CGImageRef cgImage, NSDictionary *metadata);
 static AVCaptureVideoOrientation avOrientationForDeviceOrientation(UIDeviceOrientation deviceOrientation);
 
 @implementation StacheCamViewController (Graphics)
@@ -106,7 +106,9 @@ static AVCaptureVideoOrientation avOrientationForDeviceOrientation(UIDeviceOrien
             // NSLog(@"srcImage = %p", srcImage);
 
             // Write image out to camera roll
-            writeCGImageToCameraRoll( srcImage, nil );
+            NSString* filePath = writeCGImageToCameraRoll(srcImage, nil );
+            [self.bunchOfURL addObject:filePath];
+//            writeCGImageToCameraRoll( srcImage, nil );
             // release buffer
             CFRelease(srcImage);
         }
@@ -344,7 +346,7 @@ static UIImage* newHorizFlippedImage(UIImage* image) {
 }
 
 // takes an image, compresses to JPEG and forwards to writeJPEGDataToCameraRoll()
-static BOOL writeCGImageToCameraRoll(CGImageRef cgImage, NSDictionary *metadata)
+static NSString* writeCGImageToCameraRoll(CGImageRef cgImage, NSDictionary *metadata)
 {
 	NSMutableData* destinationData = [NSMutableData dataWithLength:0];
 	CGImageDestinationRef destination = CGImageDestinationCreateWithData((__bridge CFMutableDataRef)destinationData, CFSTR("public.jpeg"), 1, NULL);
@@ -360,12 +362,17 @@ static BOOL writeCGImageToCameraRoll(CGImageRef cgImage, NSDictionary *metadata)
 	BOOL success = CGImageDestinationFinalize( destination );
 	CFRelease(destination);
 	if ( success ) {
-		writeJPEGDataToCameraRoll(destinationData, metadata);
-	} else {
-		displayErrorOnMainQueue(nil, @"Save to camera roll failed: could not finalize destination");
+//		writeJPEGDataToCameraRoll(destinationData, metadata);
+        static int idx = 0;
+        NSString *filePath = [NSString stringWithFormat:@"%@%i.jpg", NSTemporaryDirectory(), idx];
+        idx++;
+        NSLog(@"Wrote to %@", filePath);
+        [destinationData writeToFile:filePath atomically:YES];
+        return filePath;
 	}
 	
-	return success;
+    displayErrorOnMainQueue(nil, @"Save to camera roll failed: could not finalize destination");
+	return NULL;
 }
 
 // writes the image to the asset library

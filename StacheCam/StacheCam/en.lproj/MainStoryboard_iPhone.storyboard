@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" id="6al-U5-1ub">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="391"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="234"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -46,29 +46,6 @@
                                             <action selector="buttonTouchUp:" destination="2" eventType="touchUpInside" id="GeQ-cg-2JH"/>
                                         </connections>
                                     </button>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="8">
-                                        <rect key="frame" x="0.0" y="13" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <items>
-                                            <barButtonItem image="SwapIcon.png" id="PxY-xR-UKT">
-                                                <connections>
-                                                    <action selector="switchCameras:" destination="2" id="8qZ-JY-2qI"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="11"/>
-                                            <barButtonItem image="SnapIcon.png" id="9">
-                                                <connections>
-                                                    <action selector="takePicture:" destination="2" id="14"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="10"/>
-                                            <barButtonItem title="Overlays" id="sWp-0Y-WC6">
-                                                <connections>
-                                                    <action selector="toggleFacePicker:" destination="2" id="reI-wJ-Kzh"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </items>
-                                    </toolbar>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dJP-WN-8CB">
                                         <rect key="frame" x="8" y="29" width="295" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -83,6 +60,29 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="8">
+                                        <rect key="frame" x="0.0" y="14" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <items>
+                                            <barButtonItem image="SwapIcon.png" id="PxY-xR-UKT">
+                                                <connections>
+                                                    <action selector="switchCameras:" destination="2" id="8qZ-JY-2qI"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="11"/>
+                                            <barButtonItem image="SnapIcon.png" id="9">
+                                                <connections>
+                                                    <action selector="takePicture:" destination="2" id="14"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="10"/>
+                                            <barButtonItem title="Toggle" id="sWp-0Y-WC6">
+                                                <connections>
+                                                    <action selector="toggleFacePicker:" destination="2" id="reI-wJ-Kzh"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <connections>
@@ -90,10 +90,15 @@
                                     <outletCollection property="gestureRecognizers" destination="QnA-6R-RW3" appends="YES" id="lpr-v3-AiQ"/>
                                 </connections>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="cXM-fE-5ip">
+                                <rect key="frame" x="0.0" y="214" width="320" height="189"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="ImageView" destination="cXM-fE-5ip" id="T93-zT-JcV"/>
                         <outlet property="captureButton" destination="NiJ-h7-iAa" id="idM-UY-QG4"/>
                         <outlet property="fpsLabel" destination="dJP-WN-8CB" id="aL7-o2-xKh"/>
                         <outlet property="fpsSlider" destination="zET-KJ-R1c" id="CG9-8W-W9M"/>
@@ -114,7 +119,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-86.5" y="365.5"/>
+            <point key="canvasLocation" x="-87" y="365"/>
         </scene>
     </scenes>
     <resources>
