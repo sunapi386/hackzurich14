@@ -218,16 +218,16 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
 	UserDefaults.usingAnimation = self.animationSwitch.on;
 }
 
-- (IBAction)toggleFacePicker:(UISwitch*)sender {
-	self.facePicker.hidden = !self.facePicker.hidden;
-}
+//- (IBAction)toggleFacePicker:(UISwitch*)sender {
+//	self.facePicker.hidden = !self.facePicker.hidden;
+//}
 
 #pragma mark - View lifecycle
 
 - (IBAction)sliderChange:(id)sender {
     int sliderValue = (int)lroundf(self.fpsSlider.value);
     [self.fpsSlider setValue:sliderValue animated:YES];
-    self.fpsLabel.text = [NSString stringWithFormat:@"Every %d Frames", sliderValue];
+    self.fpsLabel.text = [NSString stringWithFormat:@"1/%d Frames", sliderValue];
 }
 
 -(IBAction)buttonTouchDown:(id)sender
