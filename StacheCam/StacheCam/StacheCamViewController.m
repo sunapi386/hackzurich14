@@ -240,6 +240,7 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
     NSLog(@"Button touch up");
     self.isButtonDown = false;
     NSURL* exportUrl = exportAnimatedGif(self.bunchOfURL);
+    self.ImageView.image = [UIImage animatedImageWithAnimatedGIFURL:exportUrl];
 }
 
 

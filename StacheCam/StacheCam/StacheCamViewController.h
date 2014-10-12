@@ -38,6 +38,8 @@ void displayErrorOnMainQueue(NSError *error, NSString *message);
 @property (atomic) int fpsSliderValue;
 @property (strong, nonatomic) NSMutableArray* bunchOfURL;
 
+@property (strong, nonatomic) IBOutlet UIImageView *ImageView;
+
 @property (strong, nonatomic) NSArray* funnyFaces; // assigned by Graphics for use in AVFFaceDetection (array of dictionary of per-yaw UIImage)
 @property (strong, nonatomic) NSArray* lastMetadata; // assigned by AVFFaceDetection for use in Graphics still image capture (array of AVMetadataFaceObject)
 @property (strong, nonatomic) NSArray* facesForMetadata; // assigned by AVFFaceDetection for use in Graphics still image capture (array of CGImage corresponding to entries in lastMetadata)
