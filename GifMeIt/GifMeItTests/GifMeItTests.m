@@ -1,6 +1,6 @@
 //
-//  GifMeItTests.m
-//  GifMeItTests
+//  GIFMeItTests.m
+//  GIFMeItTests
 //
 //  Created by Jade Deng on 2014-10-11.
 //  Copyright (c) 2014 Jade Deng. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface GifMeItTests : XCTestCase
+@interface GIFMeItTests : XCTestCase
 
 @end
 
-@implementation GifMeItTests
+@implementation GIFMeItTests
 
 - (void)setUp {
     [super setUp];

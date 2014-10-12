@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:GifMeIt.xcodeproj">
+      location = "self:GIFMeIt.xcodeproj">
    </FileRef>
 </Workspace>

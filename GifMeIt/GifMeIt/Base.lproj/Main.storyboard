@@ -16,36 +16,84 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8EL-Fc-sPe">
-                                <rect key="frame" x="137" y="451" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qC8-jr-RXX">
+                                <rect key="frame" x="14" y="135" width="290" height="218"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBa-po-5Su">
+                                <rect key="frame" x="137" y="473" width="46" height="30"/>
+                                <state key="normal" title="Export">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="makeGif:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TLL-ia-nlG"/>
+                                    <action selector="exportGif:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="BsY-a6-ZAo"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xyC-sY-suy">
-                                <rect key="frame" x="16" y="108" width="288" height="297"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GitMeIt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24M-R9-zMt">
-                                <rect key="frame" x="132" y="56" width="57" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xSC-LQ-EFC">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem title=".GIFMeIt" id="zoS-6I-bww"/>
+                                </items>
+                                <color key="barTintColor" red="0.90431127111873566" green="1" blue="0.66179906713598347" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfj-IC-qJR">
+                                <rect key="frame" x="121" y="424" width="79" height="30"/>
+                                <state key="normal" title="Red Circles">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="makeGif:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rl4-uz-5uR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yid-o7-Lb6">
+                                <rect key="frame" x="124" y="77" width="72" height="30"/>
+                                <state key="normal" title="Next Page">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="FU4-Ij-4Xf" kind="show" id="lox-ah-hgD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="clicky" destination="8EL-Fc-sPe" id="UT6-Tx-r2w"/>
-                        <outlet property="urlImageView" destination="xyC-sY-suy" id="ibq-6S-02m"/>
-                        <outlet property="view" destination="24M-R9-zMt" id="Nqq-AQ-gw4"/>
+                        <outlet property="clicky" destination="Xfj-IC-qJR" id="sA6-vD-zFs"/>
+                        <outlet property="exclicky" destination="hBa-po-5Su" id="WrQ-pQ-aWp"/>
+                        <outlet property="urlImageView" destination="qC8-jr-RXX" id="r2c-F1-lAd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="154"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VNc-X1-42c">
+            <objects>
+                <viewController id="FU4-Ij-4Xf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v2y-Pp-IoI"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Jf-hv-CQK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="phD-w5-cbF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aPp-oc-2ar">
+                                <rect key="frame" x="0.0" y="-20" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="view" destination="aPp-oc-2ar" id="9dB-Sh-SXB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTr-5p-dtg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="527" y="170"/>
         </scene>
     </scenes>
 </document>
