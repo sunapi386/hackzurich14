@@ -62,7 +62,7 @@ void displayErrorOnMainQueue(NSError *error, NSString *message);
 - (IBAction)switchCameras:(id)sender;
 - (IBAction)handlePinchGesture:(UIGestureRecognizer *)sender;
 - (IBAction)updateUsingAnimations:(UISwitch *)sender;
-- (IBAction)toggleFacePicker:(UISwitch*)sender;
+// - (IBAction)toggleFacePicker:(UISwitch*)sender;
 
 // UI declaration for FPS Duration slider, FPS Duration label, Capture button
 
