@@ -369,8 +369,8 @@ static NSString* writeCGImageToCameraRoll(CGImageRef cgImage, NSDictionary *meta
         static int idx = 0;
         NSString *filePath = [NSString stringWithFormat:@"%@%i.jpg", NSTemporaryDirectory(), idx];
         idx++;
-        NSLog(@"Wrote to %@", filePath);
         [destinationData writeToFile:filePath atomically:YES];
+        NSLog(@"Wrote to %@", filePath);
         return filePath;
 	}
 	
