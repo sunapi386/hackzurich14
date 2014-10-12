@@ -30,6 +30,7 @@ static AVCaptureVideoOrientation avOrientationForDeviceOrientation(UIDeviceOrien
 
 @implementation StacheCamViewController (Graphics)
 
+//PLACE WITH THE ORIENTATION
 - (void) setupGraphics
 {
 	// we will check for graphics rendered for these yaw angles
@@ -70,6 +71,8 @@ static AVCaptureVideoOrientation avOrientationForDeviceOrientation(UIDeviceOrien
     self.videoDataOutput = [AVCaptureVideoDataOutput new];
     if ( [self.session canAddOutput:self.videoDataOutput] ) {
         [self.session addOutput:self.videoDataOutput];
+        AVCaptureConnection *connection = [self.videoDataOutput connectionWithMediaType:AVMediaTypeVideo];
+        connection.videoOrientation = AVCaptureVideoOrientationPortrait;
         dispatch_queue_t videoDataOutputQueue = dispatch_queue_create("VideoDataOutputQueue", DISPATCH_QUEUE_SERIAL);
         [self.videoDataOutput setSampleBufferDelegate:self queue:videoDataOutputQueue];
         NSDictionary *rgbOutputSettings = @{ (__bridge NSString*)kCVPixelBufferPixelFormatTypeKey : [NSNumber numberWithInt:kCMPixelFormat_32BGRA] };
@@ -121,8 +124,8 @@ static AVCaptureVideoOrientation avOrientationForDeviceOrientation(UIDeviceOrien
 	// Find out the current orientation and tell the still image output.
 	AVCaptureConnection *stillImageConnection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
 	UIDeviceOrientation curDeviceOrientation = [[UIDevice currentDevice] orientation];
-	AVCaptureVideoOrientation avcaptureOrientation = avOrientationForDeviceOrientation(curDeviceOrientation);
-	[stillImageConnection setVideoOrientation:avcaptureOrientation];
+//	AVCaptureVideoOrientation avcaptureOrientation = avOrientationForDeviceOrientation(curDeviceOrientation);
+    [stillImageConnection setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];// avcaptureOrientation];
 	[stillImageConnection setVideoScaleAndCropFactor:self.effectiveScale];
 	[stillImageConnection setAutomaticallyAdjustsVideoMirroring:NO];
 	[stillImageConnection setVideoMirrored:[self.previewLayer.connection isVideoMirrored]];
