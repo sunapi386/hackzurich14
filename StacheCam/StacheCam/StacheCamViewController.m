@@ -32,6 +32,7 @@
 #import "UserDefaults.h"
 #import "animateGIF/exportAnimatedGif.h"
 #import "animateGIF/UIImage+animatedGIF.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 #import "ViewController.h"
 
@@ -242,9 +243,12 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
     NSLog(@"Button touch up");
     self.isButtonDown = false;
     NSURL* exportUrl = exportAnimatedGif(self.bunchOfURL);
+    [self.bunchOfURL removeAllObjects];
     self.transURL = exportUrl;
+    UIImage *image = [UIImage imageWithContentsOfFile:self.transURL.path];
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    [library writeImageToSavedPhotosAlbum:image.CGImage metadata:nil completionBlock:nil];
 }
-
 
 - (void)dealloc
 {

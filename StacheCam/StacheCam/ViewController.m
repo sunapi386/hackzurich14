@@ -15,4 +15,8 @@
     self.ImageView.image = self.image;
 }
 
+- (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

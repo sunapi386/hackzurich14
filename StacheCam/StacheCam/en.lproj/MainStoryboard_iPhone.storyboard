@@ -128,7 +128,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="HJX-Nw-2d7"/>
                                     <barButtonItem title="Back" id="4To-hk-OSF">
                                         <connections>
-                                            <segue destination="2" kind="modal" animates="NO" id="VUw-Gn-3Kf"/>
+                                            <action selector="back:" destination="Mto-sH-zbL" id="Tpf-3y-oKc"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="9s9-p6-jFf"/>
