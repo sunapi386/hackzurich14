@@ -33,6 +33,8 @@
 #import "animateGIF/exportAnimatedGif.h"
 #import "animateGIF/UIImage+animatedGIF.h"
 
+#import "ViewController.h"
+
 static char * const AVCaptureStillImageIsCapturingStillImageContext = "AVCaptureStillImageIsCapturingStillImageContext";
 const CGFloat FACE_RECT_BORDER_WIDTH = 3;
 
@@ -240,7 +242,7 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
     NSLog(@"Button touch up");
     self.isButtonDown = false;
     NSURL* exportUrl = exportAnimatedGif(self.bunchOfURL);
-    self.ImageView.image = [UIImage animatedImageWithAnimatedGIFURL:exportUrl];
+    self.transURL = exportUrl;
 }
 
 
@@ -271,6 +273,7 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
 	self.ciRectSwitch.on = UserDefaults.displayCIRects;
 	self.animationSwitch.on = UserDefaults.usingAnimation;
     self.bunchOfURL = [NSMutableArray array];
+    
 
 	[self setupAVCapture];
 }
@@ -330,6 +333,14 @@ CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;}
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog( @"transitioning from %@ to %@ with %@", segue.sourceViewController, segue.destinationViewController, self.transURL );
+    
+    ViewController *destinationViewController = segue.destinationViewController;
+    destinationViewController.image = [UIImage animatedImageWithAnimatedGIFURL:self.transURL];
 }
 
 @end

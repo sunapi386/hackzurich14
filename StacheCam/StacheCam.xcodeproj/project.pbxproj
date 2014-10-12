@@ -49,6 +49,7 @@
 		2BA93DA51570311A0087B313 /* SnapIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BA93DA11570311A0087B313 /* SnapIcon@2x.png */; };
 		2BA93DA61570311A0087B313 /* SwapIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BA93DA31570311A0087B313 /* SwapIcon@2x.png */; };
 		2BA93DB115704BCC0087B313 /* StacheCamViewController+AVFFaceDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA93DB015704BCC0087B313 /* StacheCamViewController+AVFFaceDetection.m */; };
+		4C34B86B19EA0F72003A88D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C34B86A19EA0B77003A88D7 /* ViewController.m */; };
 		9659E70519E9FA1B006868A9 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 9659E70419E9FA1B006868A9 /* UIImage+animatedGIF.m */; };
 		9659E70719E9FCCA006868A9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9659E70619E9FCCA006868A9 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
@@ -104,6 +105,8 @@
 		2BA93DA41570311A0087B313 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/SwapIcon@2x.png"; sourceTree = "<group>"; };
 		2BA93DAF15704BCC0087B313 /* StacheCamViewController+AVFFaceDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StacheCamViewController+AVFFaceDetection.h"; sourceTree = "<group>"; };
 		2BA93DB015704BCC0087B313 /* StacheCamViewController+AVFFaceDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "StacheCamViewController+AVFFaceDetection.m"; sourceTree = "<group>"; };
+		4C34B86919EA0B5C003A88D7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4C34B86A19EA0B77003A88D7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		69377D7615881E18008BBD00 /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		9642177319E9C4C300109E48 /* StacheCamViewController+Gif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StacheCamViewController+Gif.h"; sourceTree = "<group>"; };
 		9642177419E9C55A00109E48 /* StacheCamViewController+Gif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "StacheCamViewController+Gif.m"; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				1B867FF1139D4AD300AD6B47 /* MainStoryboard_iPad.storyboard */,
 				2B082E261577F638004E2C7B /* Graphics */,
 				1B867FE3139D4AD300AD6B47 /* Supporting Files */,
+				4C34B86919EA0B5C003A88D7 /* ViewController.h */,
+				4C34B86A19EA0B77003A88D7 /* ViewController.m */,
 			);
 			path = StacheCam;
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C34B86B19EA0F72003A88D7 /* ViewController.m in Sources */,
 				1B867FE9139D4AD300AD6B47 /* main.m in Sources */,
 				1B867FED139D4AD300AD6B47 /* StacheCamAppDelegate.m in Sources */,
 				1B867FF7139D4AD300AD6B47 /* StacheCamViewController.m in Sources */,

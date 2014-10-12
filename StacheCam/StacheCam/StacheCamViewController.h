@@ -37,8 +37,9 @@ void displayErrorOnMainQueue(NSError *error, NSString *message);
 @property (atomic) BOOL isButtonDown;
 @property (atomic) int fpsSliderValue;
 @property (strong, nonatomic) NSMutableArray* bunchOfURL;
+@property (nonatomic) NSURL* transURL;
 
-@property (strong, nonatomic) IBOutlet UIImageView *ImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *urlImageView;
 
 @property (strong, nonatomic) NSArray* funnyFaces; // assigned by Graphics for use in AVFFaceDetection (array of dictionary of per-yaw UIImage)
 @property (strong, nonatomic) NSArray* lastMetadata; // assigned by AVFFaceDetection for use in Graphics still image capture (array of AVMetadataFaceObject)
@@ -73,4 +74,5 @@ void displayErrorOnMainQueue(NSError *error, NSString *message);
 - (IBAction)sliderChange:(id)sender;
 - (IBAction)buttonTouchDown:(id)sender;
 - (IBAction)buttonTouchUp:(id)sender;
+
 @end
