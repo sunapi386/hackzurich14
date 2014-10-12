@@ -6,8 +6,13 @@
 //
 //
 
-#ifndef StacheCam_ViewController_m
-#define StacheCam_ViewController_m
+#import "ViewController.h"
 
+@implementation ViewController
 
-#endif
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.ImageView.image = self.image;
+}
+
+@end

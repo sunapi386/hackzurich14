@@ -6,8 +6,10 @@
 //
 //
 
-#ifndef StacheCam_ViewController_h
-#define StacheCam_ViewController_h
+@interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIImageView *ImageView;
 
-#endif
+@property UIImage *image;
+
+@end

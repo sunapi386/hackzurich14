@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" promptedForUpgradeToXcode5="NO" initialViewController="2">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
         <development version="4600" defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -23,13 +22,6 @@
                                 <rect key="frame" x="0.0" y="404" width="320" height="142"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="10" maxValue="30" id="zET-KJ-R1c" userLabel="Duration Horizontal Slider">
-                                        <rect key="frame" x="6" y="0.0" width="299" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <action selector="sliderChange:" destination="2" eventType="valueChanged" id="NlD-Ue-FWv"/>
-                                        </connections>
-                                    </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="NiJ-h7-iAa">
                                         <rect key="frame" x="8" y="58" width="295" height="69"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -44,8 +36,16 @@
                                         <connections>
                                             <action selector="buttonTouchDown:" destination="2" eventType="touchDown" id="HYl-fD-Ada"/>
                                             <action selector="buttonTouchUp:" destination="2" eventType="touchUpInside" id="GeQ-cg-2JH"/>
+                                            <segue destination="Mto-sH-zbL" kind="modal" identifier="ModalSegue" id="GmR-ew-FWA"/>
                                         </connections>
                                     </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="10" maxValue="30" id="zET-KJ-R1c" userLabel="Duration Horizontal Slider">
+                                        <rect key="frame" x="6" y="0.0" width="299" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="sliderChange:" destination="2" eventType="valueChanged" id="NlD-Ue-FWv"/>
+                                        </connections>
+                                    </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dJP-WN-8CB">
                                         <rect key="frame" x="8" y="29" width="295" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -79,6 +79,7 @@
                                             <barButtonItem title="Toggle" id="sWp-0Y-WC6">
                                                 <connections>
                                                     <action selector="toggleFacePicker:" destination="2" id="reI-wJ-Kzh"/>
+                                                    <segue destination="Mto-sH-zbL" kind="push" id="7f3-ZL-QAe"/>
                                                 </connections>
                                             </barButtonItem>
                                         </items>
@@ -90,15 +91,10 @@
                                     <outletCollection property="gestureRecognizers" destination="QnA-6R-RW3" appends="YES" id="lpr-v3-AiQ"/>
                                 </connections>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="cXM-fE-5ip">
-                                <rect key="frame" x="0.0" y="214" width="320" height="189"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="ImageView" destination="cXM-fE-5ip" id="T93-zT-JcV"/>
                         <outlet property="captureButton" destination="NiJ-h7-iAa" id="idM-UY-QG4"/>
                         <outlet property="fpsLabel" destination="dJP-WN-8CB" id="aL7-o2-xKh"/>
                         <outlet property="fpsSlider" destination="zET-KJ-R1c" id="CG9-8W-W9M"/>
@@ -121,6 +117,30 @@
             </objects>
             <point key="canvasLocation" x="-87" y="365"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="494-Va-N3a">
+            <objects>
+                <viewController id="Mto-sH-zbL" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dRP-YE-af2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="cXM-fE-5ip">
+                                <rect key="frame" x="15" y="72" width="290" height="218"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lac-5s-l9L"/>
+                    <connections>
+                        <outlet property="ImageView" destination="cXM-fE-5ip" id="eBZ-RF-P2F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q4k-kM-yRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="356" y="366"/>
+        </scene>
     </scenes>
     <resources>
         <image name="SnapIcon.png" width="32" height="20"/>
@@ -131,4 +151,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="GmR-ew-FWA"/>
+    </inferredMetricsTieBreakers>
 </document>
