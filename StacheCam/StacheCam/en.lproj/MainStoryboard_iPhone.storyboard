@@ -98,6 +98,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="ImageView" destination="cXM-fE-5ip" id="T93-zT-JcV"/>
                         <outlet property="captureButton" destination="NiJ-h7-iAa" id="idM-UY-QG4"/>
                         <outlet property="fpsLabel" destination="dJP-WN-8CB" id="aL7-o2-xKh"/>
                         <outlet property="fpsSlider" destination="zET-KJ-R1c" id="CG9-8W-W9M"/>
